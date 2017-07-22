@@ -24,6 +24,7 @@ public class EarthBridge extends AsynchronousAbility {
 	private int forwardDirection = BlockBukkit.WEST;
 	private int sideDirectionA = BlockBukkit.NORTH;
 	private int sideDirectionB = BlockBukkit.SOUTH;
+	private int backwardDirection = BlockBukkit.EAST;
 	private boolean hasNaggedUser = false;
 
 	public EarthBridge(EntityLivingBase e, Location l, int length) {
@@ -52,21 +53,25 @@ public class EarthBridge extends AsynchronousAbility {
 			forwardDirection = BlockBukkit.EAST;
 			sideDirectionA = BlockBukkit.NORTH;
 			sideDirectionB = BlockBukkit.SOUTH;
+			backwardDirection = BlockBukkit.WEST;
 		}
 		if(direction.getX() == -1){
 			forwardDirection = BlockBukkit.WEST;
 			sideDirectionA = BlockBukkit.NORTH;
 			sideDirectionB = BlockBukkit.SOUTH;
+			backwardDirection = BlockBukkit.EAST;
 		}
 		if(direction.getZ() == 1){
 			forwardDirection = BlockBukkit.SOUTH;
 			sideDirectionA = BlockBukkit.EAST;
 			sideDirectionB = BlockBukkit.WEST;
+			backwardDirection = BlockBukkit.NORTH;
 		}
 		if(direction.getZ() == -1){
 			forwardDirection = BlockBukkit.NORTH;
 			sideDirectionA = BlockBukkit.EAST;
 			sideDirectionB = BlockBukkit.WEST;
+			backwardDirection = BlockBukkit.SOUTH;
 		}
 	}
 
